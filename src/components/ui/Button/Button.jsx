@@ -15,7 +15,7 @@ const Button = (props) => {
   }
 
   return (
-    <button className={`btn ${className}`}>
+    <button type="button" className={`btn ${className || ''}`}>
       {children}
     </button>
   );
