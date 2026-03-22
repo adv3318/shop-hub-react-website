@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  transition: var(--transition-fast);
+}
+
+.link {
+  transition: var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
