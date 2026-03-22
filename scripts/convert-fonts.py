@@ -1,3 +1,9 @@
+"""Convert font sources to web formats.
+
+Scans `src/assets/fonts` for `.ttf`/`.otf` files and generates `.woff` and
+`.woff2` variants next to each source (skipping outputs that are up-to-date).
+"""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -8,10 +14,12 @@ FONTS_DIR = ROOT / "src" / "assets" / "fonts"
 
 
 def _is_up_to_date(src: Path, out: Path) -> bool:
+    """Return `True` if `out` exists and is newer than (or same age as) `src`."""
     return out.exists() and out.stat().st_mtime >= src.stat().st_mtime
 
 
 def _convert(src: Path, out: Path, flavor: str) -> None:
+    """Convert a font file to the specified `flavor` and save it to `out`."""
     print(f"Converting: {src.name} -> {out.name}")
     font = ttLib.TTFont(src)
     font.flavor = flavor
@@ -20,6 +28,7 @@ def _convert(src: Path, out: Path, flavor: str) -> None:
 
 
 def main() -> None:
+    """Convert all font sources in `FONTS_DIR` to `.woff` and `.woff2`."""
     FONTS_DIR.mkdir(parents=True, exist_ok=True)
 
     sources: list[Path] = []

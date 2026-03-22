@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Button = (props) => {
 
-  const { href, className, children } = props;
+  const { href, className = "", children } = props;
 
   if (href) {
     return (
@@ -15,7 +15,7 @@ const Button = (props) => {
   }
 
   return (
-    <button type="button" className={`btn ${className || ''}`}>
+    <button type="button" className={`btn ${className}`}>
       {children}
     </button>
   );
