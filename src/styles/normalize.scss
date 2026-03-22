@@ -127,7 +127,7 @@
    scroll-behavior: smooth;
  }
 
-`@media` (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html,
   :has(:target) {
     scroll-behavior: auto;
