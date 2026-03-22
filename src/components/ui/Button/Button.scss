@@ -1,0 +1,36 @@
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  color: var(--color-surface);
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+
+  &:hover {
+    background-color: var(--color-secondary-hover);
+  }
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}

@@ -1,0 +1,10 @@
+.logo {
+  font-size: var(--space-5);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: var(--transition-fast);
+  
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+}
