@@ -1,0 +1,44 @@
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+  
+body {
+  min-height: 100vh;
+  font-family: var(--font-base), sans-serif;
+  font-weight: 500;
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-fast);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
