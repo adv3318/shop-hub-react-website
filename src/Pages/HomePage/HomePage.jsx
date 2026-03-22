@@ -20,7 +20,7 @@ const HomePage = () => {
     <main className={page}>
       <div className={hero}>
         <h1 className={title}>Welcome to ShopHub</h1>
-        <p className={subtitle}>Discover amazing products at greate prices</p>
+        <p className={subtitle}>Discover amazing products at great prices</p>
       </div>
       <div className="container">
         <h2 className={sectionTitle}>Our Products</h2>
