@@ -34,3 +34,17 @@ button {
     background-color: var(--color-primary-hover);
   }
 }
+
+.btn-large {
+  padding: var(--space-4) var(--space-6);
+  font-size: 1.1rem;
+}
+
+.btn-small {
+  padding: var(--space-2) var(--space-4);
+  font-size: 14px;
+}
+
+.btn-block {
+  width: 100%;
+}

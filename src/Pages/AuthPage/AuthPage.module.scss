@@ -1,0 +1,28 @@
+.authContainer {
+  max-width: 400px;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: var(--color-surface);
+  margin-inline: auto;
+}
+
+.title {
+  margin-bottom: var(--space-6);
+  font-size: var(--space-6);
+}
+
+.authSwitch {
+  margin-top: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.authLink{
+  color: var(--color-primary);
+  cursor: pointer;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
