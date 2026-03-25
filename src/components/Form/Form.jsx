@@ -1,42 +1,37 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@/components/ui/Button/Button.jsx';
-import { AuthContext } from '@/context/AuthContext.jsx';
+import { useAuth } from '@/context/AuthContext.jsx';
 
 import style from './Form.module.scss';
 
-
 const Form = ({ mode }) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [error, setError] = useState(null);
 
-  const { signUp, login } = useContext(AuthContext);
+  const { signUp, login } = useAuth();
 
   const { form, group, label, input, formError, errorMessage } = style;
 
   const onSubmit = (data) => {
-
-    setError(null)
+    setError(null);
 
     let result;
 
-    if (mode === "signup") {
+    if (mode === 'signup') {
       result = signUp(data.email, data.password);
     } else {
-      result = login(data.email, data.password)
+      result = login(data.email, data.password);
     }
 
     if (result.success) {
-      navigate("/")
+      navigate('/');
     } else {
-      setError(result.error)
+      setError(result.error);
     }
-
-    console.log(result);
   };
 
   const {
@@ -45,13 +40,8 @@ const Form = ({ mode }) => {
     formState: { errors },
   } = useForm();
 
-
   return (
-    <form
-      className={form}
-      onSubmit={handleSubmit(onSubmit)}
-      noValidate
-    >
+    <form className={form} onSubmit={handleSubmit(onSubmit)} noValidate>
       {error && <div className={errorMessage}>{error}</div>}
 
       <div className={group}>
@@ -71,9 +61,7 @@ const Form = ({ mode }) => {
             },
           })}
         />
-        {errors.email && (
-          <span className={formError}>{errors.email.message}</span>
-        )}
+        {errors.email && <span className={formError}>{errors.email.message}</span>}
       </div>
       <div className={group}>
         <label htmlFor="password" className={label}>
@@ -90,15 +78,9 @@ const Form = ({ mode }) => {
               value: 6,
               message: 'Password must be at least 6 characters',
             },
-            maxLength: {
-              value: 12,
-              message: 'Password must be at most 12 characters',
-            }
           })}
         />
-        {errors.password && (
-          <span className={formError}>{errors.password.message}</span>
-        )}
+        {errors.password && <span className={formError}>{errors.password.message}</span>}
       </div>
       <Button type="submit" className={'btn-primary btn-large'}>
         {mode === 'signup' ? 'Sign Up' : 'Login'}

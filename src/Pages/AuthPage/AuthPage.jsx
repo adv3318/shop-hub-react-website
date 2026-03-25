@@ -1,28 +1,18 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import Form from '@/components/Form/Form.jsx';
-import { AuthContext } from '@/context/AuthContext.jsx';
 
 import style from './AuthPage.module.scss';
 
-
 const AuthPage = () => {
-
   const { authContainer, title, authSwitch, authLink } = style;
 
-  const { user, logout } = useContext(AuthContext);
-
   const [mode, setMode] = useState('signup');
-
 
   return (
     <main>
       <div className="container">
         <div className={authContainer}>
-
-          {user && <p>User logged in: {user.email}</p>}
-          <button onClick={logout} type="button">Logout</button>
-
           <h1 className={title}>{mode === 'signup' ? 'Sign Up' : 'Login'}</h1>
           <Form mode={mode} />
           <div className={authSwitch}>

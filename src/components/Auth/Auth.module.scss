@@ -3,3 +3,12 @@
   gap: var(--space-2);
 }
 
+.navbarUser {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.authEmail {
+  color: var(--color-text-muted);
+}
