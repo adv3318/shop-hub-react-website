@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from '@/components/ui/Button/Button.jsx';
+import { useCart } from '@/context/CartContext.jsx';
 import { getProductById } from '@/data/products.js';
 
 import style from './ProductDetailPage.module.scss';
@@ -24,9 +25,14 @@ const ProductDetailPage = () => {
     setProduct(foundProduct);
   }, [id, navigate]);
 
+  const { addToCart, cartItems } = useCart();
+
   if (!product) {
     return <h1>loading...</h1>;
   }
+
+  const productInCart = cartItems.find((item) => item.id === Number(id));
+  const productQuantityLabel = productInCart ? `(${productInCart.quantity})` : '';
 
   return (
     <nav>
@@ -39,7 +45,9 @@ const ProductDetailPage = () => {
             <h1 className={title}>{product.name}</h1>
             <p className={price}>${product.price}</p>
             <p className={description}>{product.description}</p>
-            <Button className={'btn-primary'}>Add to Cart</Button>
+            <Button className={'btn-primary'} onClick={() => addToCart(Number(id))}>
+              Add to Cart {productQuantityLabel}
+            </Button>
           </div>
         </div>
       </div>
