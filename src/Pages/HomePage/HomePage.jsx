@@ -1,18 +1,10 @@
 import Products from '@/components/Products/Products.jsx';
 import { getProducts } from '@/data/products.js';
 
-import style from "./HomePage.module.scss";
+import style from './HomePage.module.scss';
 
 const HomePage = () => {
-
-  const {
-    page,
-    hero,
-    title,
-    subtitle,
-    sectionTitle,
-    grid,
-  } = style
+  const { page, hero, title, subtitle, sectionTitle, grid } = style;
 
   const products = getProducts();
 

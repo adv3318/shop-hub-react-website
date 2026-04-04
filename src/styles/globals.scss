@@ -3,7 +3,7 @@ html {
     overflow: hidden;
   }
 }
-  
+
 body {
   min-height: 100vh;
   font-family: var(--font-base), sans-serif;
@@ -14,6 +14,7 @@ body {
 }
 
 main {
+  padding-top: var(--space-6);
   flex-grow: 1;
 }
 

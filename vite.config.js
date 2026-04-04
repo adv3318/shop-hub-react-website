@@ -18,7 +18,6 @@ export default defineConfig({
         @use "variables" as *;
         @use "mixins" as *;
       `,
-
       },
     },
   },
@@ -27,4 +26,3 @@ export default defineConfig({
     port: 5173,
   },
 });
-
