@@ -18,11 +18,11 @@
   color: var(--color-text-muted);
 }
 
-.authLink{
+.authLink {
   color: var(--color-primary);
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
